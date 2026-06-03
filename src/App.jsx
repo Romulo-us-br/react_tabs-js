@@ -16,7 +16,8 @@ export const App = () => {
   const [activeTabId, setActiveTabId] = useState(visibleTabs[0]?.id || 0);
 
   // 2. Encontrando a aba ativa atual para conseguir pegar o título dela no <h1>
-  const currentActiveTab = visibleTabs.find(tab => tab.id === activeTabId) || visibleTabs[0];
+  const currentActiveTab =
+    visibleTabs.find(tab => tab.id === activeTabId) || visibleTabs[0];
 
   return (
     <main className="main">
@@ -27,10 +28,10 @@ export const App = () => {
         )}
 
         {/* Passando as props com os nomes exatos exigidos pelo exercício */}
-        <Tabs 
-          tabs={visibleTabs} 
-          activeTabId={activeTabId} 
-          onTabSelected={(id) => setActiveTabId(id)} 
+        <Tabs
+          tabs={visibleTabs}
+          activeTabId={activeTabId}
+          onTabSelected={id => setActiveTabId(id)}
         />
       </div>
     </main>
